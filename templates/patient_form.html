@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+  <body>
+    <h3>Patient Readmission Prediction</h3>
+
+    <form method="post">
+      <h4>Demographics</h4>
+      Race:
+      <select name="race" required>
+        <option value="Caucasian">Caucasian</option>
+        <option value="AfricanAmerican">African American</option>
+        <option value="Asian">Asian</option>
+        <option value="Hispanic">Hispanic</option>
+        <option value="Other">Other</option>
+      </select>
+      <br /><br />
+
+      Gender:
+      <select name="gender" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <br /><br />
+
+      Age:
+      <select name="age" required>
+        <option value="[0-10)">0–10</option>
+        <option value="[10-20)">10–20</option>
+        <option value="[20-30)">20–30</option>
+        <option value="[30-40)">30–40</option>
+        <option value="[40-50)">40–50</option>
+        <option value="[50-60)">50–60</option>
+        <option value="[60-70)">60–70</option>
+        <option value="[70-80)">70–80</option>
+        <option value="[80-90)">80–90</option>
+        <option value="[90-100)">90–100</option>
+      </select>
+
+      <br /><br />
+
+      <h4>Hospital Info</h4>
+      Time in hospital:
+      <input type="number" name="time_in_hospital" required /><br /><br />
+      Num lab procedures:
+      <input type="number" name="num_lab_procedures" required /><br /><br />
+      Num procedures:
+      <input type="number" name="num_procedures" required /><br /><br />
+      Num medications:
+      <input type="number" name="num_medications" required /><br /><br />
+      Number outpatient visits:
+      <input type="number" name="number_outpatient" required /><br /><br />
+      Number emergency visits:
+      <input type="number" name="number_emergency" required /><br /><br />
+      Number inpatient visits:
+      <input type="number" name="number_inpatient" required /><br /><br />
+      Number diagnoses:
+      <input type="number" name="number_diagnoses" required /><br /><br />
+
+      <h4>Lab Results</h4>
+      A1C Result:
+      <select name="A1Cresult" required>
+        <option value="Norm">Normal</option>
+        <option value=">7">&gt;7</option>
+        <option value=">8">&gt;8</option>
+        <option value="None">None</option>
+      </select>
+      <br /><br />
+
+      Max glucose serum:
+      <select name="max_glu_serum" required>
+        <option value="Norm">Normal</option>
+        <option value=">200">&gt;200</option>
+        <option value=">300">&gt;300</option>
+        <option value="None">None</option>
+      </select>
+      <br /><br />
+
+      <h4>Medications</h4>
+      Change in medication:
+      <select name="change" required>
+        <option value="No">No</option>
+        <option value="Ch">Changed</option>
+      </select>
+      <br /><br />
+
+      Diabetes medication:
+      <select name="diabetesMed" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+      <br /><br />
+
+      Medical specialty:
+      <input
+        type="text"
+        name="medical_specialty"
+        placeholder="e.g. InternalMedicine"
+        required
+      />
+      <br /><br />
+
+      Admission type ID:
+      <input type="number" name="admission_type_id" required />
+      <br /><br />
+
+      Discharge disposition ID:
+      <input type="number" name="discharge_disposition_id" required />
+      <br /><br />
+
+      Admission source ID:
+      <input type="number" name="admission_source_id" required />
+      <br /><br />
+
+      <h4>Diagnoses</h4>
+      Diagnosis 1: <input type="text" name="diag_1" required /><br /><br />
+      Diagnosis 2: <input type="text" name="diag_2" required /><br /><br />
+      Diagnosis 3: <input type="text" name="diag_3" required /><br /><br />
+
+      <h4>Key Medications</h4>
+      Metformin:
+      <select name="metformin">
+        <option value="No">No</option>
+        <option value="Steady">Steady</option>
+        <option value="Up">Up</option>
+        <option value="Down">Down</option>
+      </select>
+      <br /><br />
+
+      Insulin:
+      <select name="insulin">
+        <option value="No">No</option>
+        <option value="Steady">Steady</option>
+        <option value="Up">Up</option>
+        <option value="Down">Down</option>
+      </select>
+      <br /><br />
+
+      <!-- Add all other medications with default value "No" -->
+      <input type="hidden" name="repaglinide" value="No" />
+      <input type="hidden" name="nateglinide" value="No" />
+      <input type="hidden" name="chlorpropamide" value="No" />
+      <input type="hidden" name="glimepiride" value="No" />
+      <input type="hidden" name="acetohexamide" value="No" />
+      <input type="hidden" name="glipizide" value="No" />
+      <input type="hidden" name="glyburide" value="No" />
+      <input type="hidden" name="tolbutamide" value="No" />
+      <input type="hidden" name="pioglitazone" value="No" />
+      <input type="hidden" name="rosiglitazone" value="No" />
+      <input type="hidden" name="acarbose" value="No" />
+      <input type="hidden" name="miglitol" value="No" />
+      <input type="hidden" name="troglitazone" value="No" />
+      <input type="hidden" name="tolazamide" value="No" />
+      <input type="hidden" name="glyburide-metformin" value="No" />
+      <input type="hidden" name="glipizide-metformin" value="No" />
+      <input type="hidden" name="metformin-rosiglitazone" value="No" />
+      <input type="hidden" name="metformin-pioglitazone" value="No" />
+
+      <input type="submit" value="Predict Readmission Risk" />
+    </form>
+  </body>
+</html>

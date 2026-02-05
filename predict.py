@@ -3,9 +3,11 @@
 import joblib
 import pandas as pd
 from preprocessing import preprocess_single_patient
+from s3_loader import load_model
 
-# Load the trained model (loaded once when module is imported)
-model = joblib.load('gradient_boosting_model.pkl')
+# Load the trained model 
+model = load_model('gradient_boosting_model.pkl')
+
 
 def predict_readmission(patient_data):
     """
