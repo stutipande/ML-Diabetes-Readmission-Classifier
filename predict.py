@@ -1,9 +1,9 @@
 # predict.py
 
-import joblib
 import pandas as pd
-from preprocessing import preprocess_single_patient
 from s3_loader import load_model
+from preprocessing import preprocess_single_patient
+
 
 # Load the trained model 
 model = load_model('gradient_boosting_model.pkl')
