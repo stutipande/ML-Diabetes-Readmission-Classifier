@@ -5,7 +5,7 @@ import joblib
 import os
 
 # Your S3 bucket name
-BUCKET_NAME = 'diabetes-readmission-models-sp' 
+BUCKET_NAME = 'diabetes-readmission-model-sp' 
 
 # Files to download from S3
 MODEL_FILES = [
