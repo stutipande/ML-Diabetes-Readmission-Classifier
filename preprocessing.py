@@ -2,14 +2,13 @@
 
 import pandas as pd
 import numpy as np
-import joblib
+from s3_loader import load_model
 
-# Load saved encoders (these will be loaded once when the app starts)
-specialty_encoder = joblib.load('specialty_encoder.pkl')
-health_index_discretizer = joblib.load('health_index_discretizer.pkl')
-selected_meds = joblib.load('selected_meds.pkl')
-# Load expected columns
-expected_columns = joblib.load('expected_columns.pkl')
+# Load saved encoders 
+specialty_encoder = load_model('specialty_encoder.pkl')
+health_index_discretizer = load_model('health_index_discretizer.pkl')
+selected_meds = load_model('selected_meds.pkl')
+expected_columns = load_model('expected_columns.pkl')
 
 def preprocess_single_patient(patient_data):
     """
