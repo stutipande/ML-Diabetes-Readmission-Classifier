@@ -3,6 +3,8 @@
 import boto3
 import joblib
 import os
+from dotenv import load_dotenv
+
 
 # Your S3 bucket name
 BUCKET_NAME = 'diabetes-readmission-model-sp' 
@@ -16,11 +18,18 @@ MODEL_FILES = [
     'expected_columns.pkl'
 ]
 
+# Look for a .env file 
+load_dotenv()
+
 def download_models_from_s3():
     """
     Downloads model files from S3 to local directory if they don't exist
     """
-    s3 = boto3.client('s3')
+    s3 = boto3.client(
+    's3',
+    aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+    aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY')
+    )
     
     for filename in MODEL_FILES:
         # Check if file already exists locally
