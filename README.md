@@ -8,7 +8,7 @@ Hospital readmissions are expensive and often preventable. This application uses
 
 **What it does:**
 - Predicts probability of readmission within 30 days
-- Categorizes patients into Low/Medium/High risk groups
+- Categorises patients into Low/Medium/High risk groups
 - Provides a web interface for clinicians
 - Offers an API for integration with hospital systems
 
@@ -65,3 +65,6 @@ diabetes-readmission-predictor/
 ├── requirements.txt         # Dependencies
 └── README.md
 ```
+## To Run
+pip install -r requirements.txt
+python app.py
