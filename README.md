@@ -66,5 +66,10 @@ diabetes-readmission-predictor/
 └── README.md
 ```
 ## To Run
+
+```
+
 pip install -r requirements.txt
 python app.py
+
+```
